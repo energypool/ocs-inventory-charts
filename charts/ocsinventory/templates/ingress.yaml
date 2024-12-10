@@ -10,6 +10,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  ingressClassName: {{ .Values.ingress.ingressClassName }}
   tls:
     - hosts:
       {{- range .Values.ingress.hosts }}
@@ -49,6 +50,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-secret: {{ template "ocsinventory.fullname" . }}
     nginx.ingress.kubernetes.io/auth-realm: {{ .Values.ingress.basicauth.authRealm | quote }}
 spec:
+  ingressClassName: {{ .Values.ingress.ingressClassName }}
   tls:
     - hosts:
       {{- range .Values.ingress.hosts }}
