@@ -120,6 +120,7 @@ Key | Description | Default
 `mariadb.auth.database` | Database name to create | `""`
 `mariadb.auth.username` | Database user to create | `""`
 `mariadb.auth.password` | Password for the user | `""`
+`mariadb.authExistingSecret` | Existing secret for mariadb auth | `""`
 `ingress.enabled` | Enable use of ingress controllers | `true`
 `ingress.ingressClassName` | Name for the ingress class | `""`
 `ingress.tls` | Use dedicated certificates | `true`
