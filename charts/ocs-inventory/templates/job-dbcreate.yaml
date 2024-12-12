@@ -23,12 +23,12 @@ spec:
         - name: OCS_DB_NAME
           valueFrom:
             secretKeyRef:
-                name: {{ template "ocsinventory.fullname" . }}
+                name: {{ .Values.dbAuthExistingSecret | default (include "ocsinventory.fullname" .) }}
                 key: db-name
         - name: OCS_DB_PASS
           valueFrom:
             secretKeyRef:
-                name: {{ template "ocsinventory.fullname" . }}
+                name: {{ .Values.dbAuthExistingSecret | default (include "ocsinventory.fullname" .) }}
                 key: db-pass
         - name: OCS_DB_SERVER
         {{- if .Values.mariadb.enabled }}
@@ -38,13 +38,13 @@ spec:
         - name: MARIADB_OCS_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-                name: {{ template "ocsinventory.fullname" . }}
+                name: {{ .Values.dbAuthExistingSecret | default (include "ocsinventory.fullname" .) }}
                 key: root-pass
         {{- end }}
         - name: OCS_DB_USER
           valueFrom:
             secretKeyRef:
-                name: {{ template "ocsinventory.fullname" . }}
+                name: {{ .Values.dbAuthExistingSecret | default (include "ocsinventory.fullname" .) }}
                 key: db-user
         command: ["/bin/bash"]
         {{ if .Values.mariadb.enabled }}
