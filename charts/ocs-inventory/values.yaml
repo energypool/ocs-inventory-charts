@@ -76,6 +76,7 @@ mariadb:
     username: ""
     password: ""
     existingSecret: ""
+    ## See https://github.com/bitnami/charts/blob/main/bitnami/mariadb/values.yaml#L149
 
 ## Allowing use of ingress controllers
 ## https://kubernetes.io/docs/concepts/services-networking/ingress/
