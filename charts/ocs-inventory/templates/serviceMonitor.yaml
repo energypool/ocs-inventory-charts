@@ -1,4 +1,3 @@
-
 {{- if and .Values.metrics.enabled .Values.metrics.serviceMonitor.enabled }}
 ---
 apiVersion: monitoring.coreos.com/v1

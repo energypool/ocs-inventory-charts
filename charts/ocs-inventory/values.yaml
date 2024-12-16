@@ -97,14 +97,6 @@ ingress:
     # nginx.ingress.kubernetes.io/proxy-send-timeout: 300s
     # nginx.ingress.kubernetes.io/proxy-read-timeout: 300s
     # cert-manager.io/cluster-issuer: ""
-  basicauth:
-    enabled: false
-    username: ""
-    password: ""
-    authRealm: "Authentication Required"
-    paths:
-      - "/ocsapi"
-      - "/ocsinventory"
 
 ## Ressources limits and requests for the container
 ## https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/

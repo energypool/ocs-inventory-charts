@@ -89,8 +89,6 @@ parameters to configure include persistence.storageClass, ingress.hosts.
 Within the ingress annotations, configure the cluster-issuer and ingress.class. If you
 want to authorize only specific IPs or ranges, adjust the whitelist-source-range. 
 
-Lastly, set up the username and password for basic authentication.
-
 ## Values
 
 Key | Description | Default
@@ -126,11 +124,6 @@ Key | Description | Default
 `ingress.tls` | Use dedicated certificates | `true`
 `ingress.hosts` | OCS hosts to create application URLs | `""`
 `ingress.annotations` | An array of ingress annotations | `{}`
-`ingress.basicauth.enabled`  | Wether to enable basic auth | `"false"`
-`ingress.basicauth.username`  | Username for basic auth | `""`
-`ingress.basicauth.password`  | Password for basic auth | `""`
-`ingress.basicauth.authRealm` | Basic auth directive | `Authentication Required`
-`ingress.basicauth.paths` | Paths with basic auth | `/ocsapi` `/ocsinventory`
 `resources` | CPU/Memory resource requests/limits for OCS pod | `{}`
 `metrics.enabled` | Enable metrics| `false`
 `metrics.image.repository` | apache-exporter Image | `docker.io/bitnami/apache-exporter`
