@@ -10,7 +10,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
   {{ if .Values.ingress.middleware.enabled }}
-    traefik.ingress.kubernetes.io/router.middlewares: {{ template "ocsinventory.fullname" . }}-redirect@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-{{ template "ocsinventory.fullname" . }}-addprefix@kubernetescrd
   {{- end }}
 spec:
   ingressClassName: {{ .Values.ingress.ingressClassName }}
@@ -41,12 +41,10 @@ spec:
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: {{ template "ocsinventory.fullname" . }}-redirect
+  name: {{ template "ocsinventory.fullname" . }}-addprefix
   labels:
     {{- include "ocsinventory.labels" . | nindent 4 }}
 spec:
-  redirectRegex:
-    regex: ^/(.*)
-    replacement: /ocsreports/$1
-    permanent: true
+  addPrefix:
+    prefix: /ocsreports
 {{- end }}
