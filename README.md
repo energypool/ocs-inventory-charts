@@ -124,7 +124,6 @@ Key | Description | Default
 `ingress.tls` | Use dedicated certificates | `true`
 `ingress.hosts` | OCS hosts to create application URLs | `""`
 `ingress.annotations` | An array of ingress annotations | `{}`
-`ingress.middleware.enabled` | Whether to create the redirect middleware or not | `false`
 `resources` | CPU/Memory resource requests/limits for OCS pod | `{}`
 `metrics.enabled` | Enable metrics| `false`
 `metrics.image.repository` | apache-exporter Image | `docker.io/bitnami/apache-exporter`
